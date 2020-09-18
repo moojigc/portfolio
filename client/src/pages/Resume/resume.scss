@@ -1,0 +1,28 @@
+.resume {
+    .left {
+        border-radius: 0.15rem 0 0 0.15rem;
+        background-color: rgb(228, 228, 228);
+        padding: 1rem;
+        > div {
+            height: max-content;
+        }
+    }
+    .right {
+        border-radius: 0 0.15rem 0.15rem 0;
+        background-color: #fff;
+        padding: 1rem;
+    }
+    > * {
+        margin-bottom: 0.5rem;
+    }
+    li {
+        margin-left: 1rem;
+        list-style: circle;
+    }
+    h1 {
+        font-weight: bolder;
+    }
+    h3, h4, h5, .date {
+        font-weight: bold;
+    }
+}

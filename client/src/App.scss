@@ -1,0 +1,218 @@
+@import "./utils/reset";
+@import "./utils/mui-overrides.scss";
+@import "./components/Hero/hero.scss";
+@import "./pages/Resume/resume.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 20px;
+	font-family: "Raleway", "Noto Sans JP", sans-serif;
+	--fancy-font: "Raleway", "Noto Sans JP", sans-serif;
+	--link: #2700c1;
+	--box-shadow: 0px 0px 15px 2px #0000007a;
+	--wrapper: linear-gradient(
+		90deg,
+		rgba(227, 197, 199, 1) 0%,
+		rgba(223, 207, 212, 1) 6%,
+		rgba(223, 207, 212, 1) 94%,
+		rgba(227, 197, 199, 1) 100%
+	);
+	--headshot-btn: #98aede;
+	--primary: #e3c5c7;
+	--dark-transluscent: #a36b64;
+	--dark: #321e17;
+	--btn-large: #a36b64;
+	--card-bg: #bc93976b;
+	--card: #e3c5c7;
+}
+
+.contact {
+	button,
+	a {
+		background-color: var(--btn-large);
+		&:hover {
+			background-color: darken(#a36b64, 10);
+		}
+	}
+}
+
+a {
+	color: var(--link);
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+html,
+body {
+	line-height: 1.5rem;
+	height: 100%;
+	background: var(--primary);
+}
+
+p {
+	margin: 0.5rem 0;
+}
+code {
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
+	font-size: 95%;
+	color: rgb(224, 0, 37);
+}
+.btn-image {
+	max-width: inherit;
+	width: 5rem;
+	min-width: 3rem;
+}
+
+.mobile-nav {
+	display: none;
+}
+
+.wrapper {
+	height: inherit;
+	margin-bottom: 2rem;
+	border-radius: 0.25rem;
+	box-shadow: var(--box-shadow);
+	background: var(--wrapper);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 0.5rem;
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.btn-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 0.5rem;
+}
+
+.heading {
+	font-family: var(--fancy-font);
+	font-weight: 800;
+	color: whitesmoke;
+	background: rgb(50, 30, 23);
+	background: radial-gradient(
+		circle,
+		rgba(50, 30, 23, 1) 0%,
+		rgba(50, 30, 23, 1) 50%,
+		rgba(227, 197, 199, 1) 100%
+	);
+	text-align: center;
+	border-radius: 0.25rem 0.25rem 0 0;
+	h1 {
+		margin: unset;
+		font-size: 2rem;
+		padding: 1rem;
+	}
+}
+
+article {
+	padding: 0.5rem 1rem;
+	p {
+		margin: 0.5rem 0;
+	}
+}
+
+.headshot {
+	background: transparent;
+	box-shadow: unset;
+	.card-content {
+		box-shadow: var(--box-shadow);
+		color: whitesmoke;
+		background: var(--card-bg);
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		font-size: small;
+		text-align: center;
+		padding: 0.5rem;
+		border-radius: 0.25rem;
+	}
+	.card-image {
+		img {
+			box-shadow: var(--box-shadow);
+
+			border-radius: 50%;
+			margin-bottom: 0.5rem;
+		}
+	}
+	.btn {
+		padding: unset;
+		letter-spacing: unset;
+		$secondary-color: var(--headshot-btn);
+	}
+}
+
+.card {
+	a {
+		width: 100%;
+	}
+}
+.portfolio-card {
+	background: var(--card);
+	.btn {
+		height: auto;
+		&:hover {
+			background: #0e0a1ff0 !important;
+		}
+	}
+}
+
+.contact {
+	// margin: 0 -1rem -0.5rem -1rem;
+	.col {
+		width: 100%;
+		justify-content: space-evenly;
+		display: flex;
+		padding: 1rem 0.5rem;
+		box-shadow: 0px 4px 15px 2px #0000004a;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(1rem, 1fr));
+		grid-gap: 0.25rem;
+	}
+}
+.btn {
+	$secondary-color: #6b649f;
+}
+
+@media screen and (max-width: 900px) {
+	:root {
+		font-size: 16px;
+	}
+	.container {
+		width: 100%;
+		margin-top: 5rem;
+	}
+	.grid {
+		grid-template-columns: 100%;
+	}
+	.contact {
+		.col {
+			grid-template-columns: 50% 50%;
+		}
+	}
+	.portfolio-card {
+		.btn {
+			width: 100%;
+			height: auto;
+			line-height: 1.1rem;
+			font-size: 0.75rem;
+		}
+	}
+	.mobile-nav {
+		background: var(--dark-transluscent);
+		display: flex;
+		justify-content: center;
+	}
+}

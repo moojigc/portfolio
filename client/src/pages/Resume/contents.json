@@ -1,0 +1,127 @@
+{
+    "name": "Moojig (Munkhtsogt) Battsogt",
+    "title": "Full Stack Web Developer",
+    "phone": "347-391-6941",
+    "location": "New Haven County, CT",
+    "email": "me@moojig.dev",
+    "site": {
+        "href": "https://moojigbc.com",
+        "text": "moojigbc.com"
+    },
+    "linkedin": {
+        "href": "https://linkedin.com/in/moojigbc",
+        "text": "moojigbc"
+    },
+    "github": {
+        "href": "https://github.com/moojigc",
+        "text": "moojigc"
+    },
+    "summary": "Motivated full stack web developer, dedicated to creating custom solutions for complex problems.",
+    "skills": [
+        {
+            "title": "Languages",
+            "list": [
+                "HTML5",
+                "CSS",
+                "JavaScript",
+                "TypeScript"
+            ]
+        },
+        {
+            "title": "Back-End",
+            "list": [
+                "Node.js",
+                "Express.js",
+                "MongoDB + Mongoose",
+                "MySQL + Sequelize",
+                "Passport.js"
+            ]
+        },
+        {
+            "title": "Front-End",
+            "list": [
+                "SCSS/SASS",
+                "jQuery",
+                "Handlebars",
+                "React.js"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "school": "UConn Coding Boot Camp",
+            "degree": "Certificate",
+            "field": "Full Stack Web Development",
+            "from": "Feb. 2020",
+            "to": "July 2020"
+        },
+        {
+            "school": "New York University",
+            "degree": "B.A.",
+            "field": "Economics",
+            "from": "Sept. 2014",
+            "to": "May 2018"
+        }
+    ],
+    "employment": [
+        {
+            "company": "Salusion | salusion.com",
+            "title": "Junior Front End Engineer (as contractor)",
+            "location": "Remote",
+            "from": "July 2020",
+            "to": "Current",
+            "description": [
+                "Create mobile-friendly, responsive React components.",
+                "Reduced usage of style libraries by rewriting components from scratch with custom SCSS.",
+                "Create email-compatible HTML templates in-line with company branding and image."
+            ]
+        },
+        {
+            "company": "Oronoque Eye Care",
+            "title": "Patient Service Coordinator",
+            "location": "Stratford, CT",
+            "from": "Sept. 2018",
+            "to": "Oct. 2019",
+            "description": [
+                "Managed patient appointments, insurance verification, customer service issues, and assisted doctors with examinations."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "ProjectKanri",
+            "repo": "https://github.com/moojigc/ProjectKanri",
+            "href": "https://projectkanri.herokuapp.com",
+            "from": "July 2020",
+            "to": "Current",
+            "description": [
+                "A project management single page web application (SPA).",
+                "A user can create a project, create tasks associated with that project, invite other people to collaborate via email, restrict other members' edit and delete permissions, and assign them to different tasks. I was responsible for the database modelling and back-end user authentication and interaction with the client-side, and a few pages on the front-end.",
+                "Back-end tools: Node.js, Express.js, MongoDB/Mongoose. Front-end tools: React.js, Material UI."
+            ]
+        },
+        {
+            "title": "All For One",
+            "repo": "https://github.com/moojigc/all-for-one",
+            "href": "https://all-for-one-msg.herokuapp.com",
+            "from": "May 2020",
+            "description": [
+                "A server-rendered content aggregation website, similar in concept to Reddit.",
+                "You can sign up and see posts from your local area, comment on them, and make your own text or image post. I was the sole member responsible for the back-end, including converting plain HTML to Handlebars templates.",
+                "Back-end tools: Node.js, Express.js, Handlebars, MySQL/Sequelize. Front-end tools: jQuery, W3Schools CSS Framework"
+            ]
+        },
+        {
+            "title": "IntelliDnD",
+            "repo": "https://github.com/moojigc/intellidnd",
+            "href": "https://intellidnd.com",
+            "from": "March 2020",
+            "to": "Current",
+            "description": [
+                "A cross-platform web application that helps users manage their characters for the tabletop fantasy game, Dungeons & Dragons.",
+                "Started out as a Discord bot, now also a web application integrated with the same database so users can seamlessly use either platform.",
+                "Back-end tools: Discord.js API, MongoDB/Mongoose, Node.js, Express.js, Handlebars. Front-end tools: jQuery, Materialize CSS Framework "
+            ]
+        }
+    ]
+}

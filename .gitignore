@@ -1,3 +1,7 @@
+.prettierrc
+config.json
+.env.development
+client/build
 # Logs
 logs
 *.log

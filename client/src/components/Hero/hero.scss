@@ -1,0 +1,57 @@
+$dark: rgba(0, 0, 0, 0.74);
+
+.hero {
+    .name {
+        font-family: var(--fancy-font);
+        font-size: 4vw;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        text-shadow: -2px 2px 10px $dark;
+        font-weight: 900;
+        padding: 2rem;
+        color: whitesmoke;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+	min-height: 10rem;
+	background-image: url('/images/computer.jpg');
+	background-size: cover;
+    background-position-y: center;
+    text-align: center;
+    color: whitesmoke;
+    
+    section {
+        $faded: rgba(255, 255, 255, 0.384);
+        padding: 1rem;
+        background: $faded;
+        box-shadow: 0 0 20px 10px $dark;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+        margin-left: auto;
+    }
+    img {
+        margin: auto;
+        min-width: 1rem;
+        max-width: 3rem;
+        // &:not(:last-of-type) {
+        //     margin-right: 5rem;
+        // }
+    }
+    .buttons {
+        width: 100%;
+        margin: 0;
+        padding: 2rem;
+        text-transform: unset !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .hero {
+        img {
+            max-width: 3rem;
+        }
+    }
+}
