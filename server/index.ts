@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import { join } from "path";
+import { resolve } from "path";
 import morgan from "morgan";
 import router from "./routes/getProjects";
 import { networkInterfaces } from "os";
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 4000,
 
 app.use(express.urlencoded({ extended: true })).use(express.json());
 
-PROD && app.use(express.static(join(__dirname, "client", "build")));
+PROD && app.use(express.static(resolve(__dirname, "..", "client", "build")));
 !PROD && app.use(morgan("dev"));
 
 app[router.method](`/api/v1/${router.route}`, router.callback);
@@ -27,7 +27,7 @@ app.all("/api/v1/*", (req, res) => {
 
 PROD &&
 	app.get("*", (_, res) =>
-		res.sendFile(join(__dirname, "client", "build", "index.html"))
+		res.sendFile(resolve(__dirname, "..", "client", "build", "index.html"))
 	);
 
 app.listen(PORT, () => {

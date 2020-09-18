@@ -1,6 +1,8 @@
 .prettierrc
 config.json
 .env.development
+.env
+build
 client/build
 # Logs
 logs
