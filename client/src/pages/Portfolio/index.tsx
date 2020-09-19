@@ -40,22 +40,24 @@ const Portfolio = ({ repos = [] }) => {
 											height="auto"
 											image={`/images/${name}.png`}
 										/>
-										<CardContent>
-											<div
-												style={{
-													fontSize: "2rem",
-													textAlign: "center",
-												}}
-											>
-												<Link
-													style={{ fontFamily: 'var(--fancy-font)'}}
-													color="textPrimary"
-													href={html_url}
+										<CardContent style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+											<div>
+												<div
+													style={{
+														fontSize: "2rem",
+														textAlign: "center",
+													}}
 												>
-													{name}
-												</Link>
+													<Link
+														style={{ fontFamily: 'var(--fancy-font)'}}
+														color="textPrimary"
+														href={html_url}
+													>
+														{name}
+													</Link>
+												</div>
+												<p>{description}</p>
 											</div>
-											<p>{description}</p>
 											<Grid
 												container
 												justify="center"

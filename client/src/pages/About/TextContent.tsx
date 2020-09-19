@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "@material-ui/core";
-import { Link as A } from "react-router-dom";
 
 export default (lang: string, age?: number) => {
 	switch (lang) {
@@ -42,21 +40,7 @@ export default (lang: string, age?: number) => {
 							も卒業しました。専攻が経済学で、副専攻が映画製作でした。
 						</p>
 						<p>
-							暇の日は、漫画を読んだり、アニメを見たりや日本語の勉強したりなどしているんです。
-						</p>
-						<p>
-							ぜひ私の{" "}
-							<Link
-								style={{
-									fontWeight: "bold",
-									color: "var(--link)",
-								}}
-								component={A}
-								to="/portfolio/ja"
-							>
-								ポートフォリオのページ
-							</Link>{" "}
-							をご覧ください。そこに私のプロジェクトとそれぞれのGithubリポジトリを見えます。
+							暇の間には、漫画を読んだり、アニメを見たりや日本語の勉強したりなどしているんです。
 						</p>
 					</article>
 				),
@@ -97,9 +81,6 @@ export default (lang: string, age?: number) => {
 							In my free time, I like to indulge in photography
 							and videogames, as well as Japanese media.
 						</p>
-                        <p>
-                            (also, <span style={{color: '#007acc', fontWeight: 800 }}>TypeScript</span> > JavaScript)
-                        </p>
 					</article>
 				),
 				header: "About",
