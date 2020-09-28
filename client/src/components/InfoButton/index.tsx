@@ -1,7 +1,7 @@
 import React from "react";
-import { ButtonGroup } from "@material-ui/core";
+import { ButtonGroup, ButtonGroupProps } from "@material-ui/core";
 
-const InfoButtonGroup = (props) => {
+const InfoButtonGroup = (props: ButtonGroupProps) => {
 	return (
 		<ButtonGroup size="large" color="secondary" variant="contained" className="contact" {...props}>
 			{props.children}
