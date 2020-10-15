@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
 	Route,
-	Switch,
-    useHistory,
-	useParams,
+	Switch
 } from "react-router-dom";
 import { About, Portfolio, Resume } from "../pages";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -18,18 +16,17 @@ const Routes = () => {
 	const [mounted, setMounted] = useState(false);
 	const [repos, setRepos] = useState([]);
 	useEffect(() => {
-		getRepos().then((data) => {
-			setRepos(data);
+		(async () => {
+			const repos = await getRepos();
+			setRepos(repos);
 			setMounted(true);
-		});
+		})();
 	}, []);
 
 	return (
 		<ThemeProvider theme={theme}>
 			<Nav />
 			<Switch>
-				{/* <Route exact path={['/portfolio', '/portfolio/:lang']}>
-							</Route> */}
 				<Route exact path="/:lang/resume">
 					<Resume />
 				</Route>
