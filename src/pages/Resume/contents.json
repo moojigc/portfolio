@@ -66,14 +66,14 @@
     "employment": [
         {
             "company": "Salusion | salusion.com",
-            "title": "Junior Front End Engineer (as contractor)",
-            "location": "Remote",
+            "title": "Full Stack Engineer",
+            "location": "Remote | NYC",
             "from": "July 2020",
             "to": "Current",
             "description": [
-                "Create mobile-friendly, responsive React components.",
-                "Reduced usage of style libraries by rewriting components from scratch with custom SCSS.",
-                "Create email-compatible HTML templates in-line with company branding and image."
+                "Created new portal to the Federal Healthplan Marketplace at salusion.com/calculator.",
+                "Migrated the existing React front-end to use TypeScript to increase development ease and efficiency.",
+                "Originally began as a front-end engineer, but have taken complete responsibility over the back-end."
             ]
         },
         {

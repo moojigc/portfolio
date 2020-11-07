@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
 	Container,
 	Grid,
@@ -7,6 +7,7 @@ import {
 	Link,
 	List,
 	Divider,
+	Link as A
 } from "@material-ui/core";
 import {
 	Email,
@@ -14,7 +15,7 @@ import {
 	LinkedIn,
 	GitHub,
 	Phone,
-	PinDrop,
+	PinDrop
 } from "@material-ui/icons";
 import {
 	name,
@@ -46,6 +47,22 @@ const InfoSection = ({ details = [] }) => (
 		))}
 	</React.Fragment>
 );
+
+const checkForLink = (str: string) => {
+	const arr = str.split(' ');
+
+	return arr.reduce((pv, cv) => {
+		if (/.com/.test(cv)) {
+			return (
+				<Fragment>{pv}{' '}
+					<A style={{ color: '#009dc1' }} href={'https://' + cv.replace(/.$/, '')}>{cv}</A>
+				</Fragment>
+			);
+		} else {
+			return `${pv} ${cv}`;
+		}
+	}, '');
+};
 
 const Resume = () => {
 	return (
@@ -185,7 +202,7 @@ const Resume = () => {
 								<List>
 									{e.description.map((d, i) => (
 										<li key={i}>
-											<T>{d}</T>
+											<T>{checkForLink(d)}</T>
 										</li>
 									))}
 								</List>
