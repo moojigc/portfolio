@@ -1,6 +1,30 @@
 import axios, { AxiosRequestConfig } from 'axios';
+type LS = {
+    path: string;
+    referredBy?: string,
+    time: number,
+};
 
 export default class mAPI {
+
+    private static _setLs() {
+
+        const params = new URLSearchParams(window.location.search);
+        const data = {
+            path: window.location.pathname,
+            referredBy: params.get('from'),
+            time: Date.now()
+        };
+
+        localStorage.setItem('visit', JSON.stringify(data));
+
+        return data;
+    }
+
+    private static _getLs(): LS | null {
+
+        return JSON.parse(localStorage.getItem('visit')) as LS;
+    }
 
     private static _url = /moojigbc.com/.test(window.location.host) 
         ? 'https://api.moojig.dev/v1' : 'http://localhost:4500/v1';
@@ -47,14 +71,27 @@ export default class mAPI {
         }
     }
 
-    public static async postVisitor(data: {
+    public static async postVisitor(data?: {
         path?: string;
         referredBy?: string;
     }) {
 
-        return await this._request('/visit', {
-            method: 'POST',
-            payload: data
-        });
+        const lastVisit = this._getLs();
+        const moreThanDay = (t: number) => (Date.now() - t) >= 1000 * 60 * 60 * 24;
+
+        if (!lastVisit 
+            || lastVisit.path !== window.location.pathname
+            || moreThanDay(lastVisit.time)) {
+
+            const newVisit = this._setLs();
+    
+            return await this._request('/visit', {
+                method: 'POST',
+                payload: {
+                    path: data?.path || newVisit.path,
+                    referredBy: data.referredBy || newVisit.referredBy
+                }
+            });
+        }
     }
 }

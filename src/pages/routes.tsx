@@ -14,7 +14,6 @@ import mAPI from "../utils/mAPI";
 
 const Routes = () => {
 
-	const params = new URLSearchParams(window.location.search);
 	const [mounted, setMounted] = useState(false);
 	const [repos, setRepos] = useState([]);
 	useEffect(() => {
@@ -24,10 +23,8 @@ const Routes = () => {
 			setMounted(true);
 		})();
 
-		mAPI.postVisitor({
-			path: window.location.pathname,
-			referredBy: params.get('from')
-		});
+		mAPI.postVisitor();
+
 	}, []);
 
 	return (
