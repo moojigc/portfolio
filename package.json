@@ -23,6 +23,7 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
+    "watch": "nodemon --exec npm start -e ts,js,json,css,scss,html",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -10,9 +10,11 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import getRepos from "../utils/repos";
 import Hero from "../components/Hero";
+import mAPI from "../utils/mAPI";
 
 const Routes = () => {
 
+	const params = new URLSearchParams(window.location.search);
 	const [mounted, setMounted] = useState(false);
 	const [repos, setRepos] = useState([]);
 	useEffect(() => {
@@ -21,6 +23,11 @@ const Routes = () => {
 			setRepos(repos);
 			setMounted(true);
 		})();
+
+		mAPI.postVisitor({
+			path: window.location.pathname,
+			referredBy: params.get('from')
+		});
 	}, []);
 
 	return (
