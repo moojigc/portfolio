@@ -77,7 +77,7 @@ export default class mAPI {
     }) {
 
         const lastVisit = this._getLs();
-        const moreThanDay = (t: number) => (Date.now() - t) >= 1000 * 60 * 60 * 24;
+        const moreThanDay = (t: number) => (Date.now() - (t ?? Date.now())) >= 1000 * 60 * 60 * 24;
 
         if (!lastVisit 
             || lastVisit.path !== window.location.pathname
