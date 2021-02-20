@@ -21,9 +21,18 @@ export default class mAPI {
         return data;
     }
 
-    private static _getLs(): LS | null {
+    private static _getLs(): LS & { currentReferrer: string; } | null {
 
-        return JSON.parse(localStorage.getItem('visit')) as LS;
+        const lastVisit = JSON.parse(localStorage.getItem('visit')) as LS;
+        if (lastVisit) {
+
+            const params = new URLSearchParams(window.location.search);
+
+            return {
+                ...lastVisit,
+                currentReferrer: params.get('referredBy')
+            };
+        }
     }
 
     private static _url = /moojigbc.com/.test(window.location.host) 
@@ -81,6 +90,7 @@ export default class mAPI {
 
         if (!lastVisit 
             || lastVisit.path !== window.location.pathname
+            || lastVisit.referredBy !== lastVisit.currentReferrer
             || moreThanDay(lastVisit.time)) {
 
             const newVisit = this._setLs();
@@ -89,7 +99,7 @@ export default class mAPI {
                 method: 'POST',
                 payload: {
                     path: data?.path || newVisit.path,
-                    referredBy: data.referredBy || newVisit.referredBy
+                    referredBy: data?.referredBy || newVisit.referredBy
                 }
             });
         }
