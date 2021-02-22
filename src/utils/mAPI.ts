@@ -12,7 +12,7 @@ export default class mAPI {
         const params = new URLSearchParams(window.location.search);
         const data = {
             path: window.location.pathname,
-            referredBy: params.get('from'),
+            referredBy: params.get('r'),
             time: Date.now()
         };
 
@@ -30,7 +30,7 @@ export default class mAPI {
 
             return {
                 ...lastVisit,
-                currentReferrer: params.get('referredBy')
+                currentReferrer: params.get('r')
             };
         }
     }
