@@ -18,7 +18,7 @@ import { useScrollTo } from "../../utils";
 const About = ({ setMounted }: any) => {
 	const { lang } = useParams() as { lang: string };
 	const age = Math.floor(
-		(Date.now() - new Date(1996, 2, 29).getTime()) /
+		(Date.now() - new Date(1996, 1, 29).getTime()) /
 			(1000 * 60 * 60 * 24 * 365.25)
 	);
 	const isMobile = useMediaQuery("(max-width:900px)");
